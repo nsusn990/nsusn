@@ -1,7 +1,9 @@
-'use client'
+"use client";
 
 import React, { useState } from "react";
 import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,13 +13,14 @@ function Navigation() {
     <nav className="w-full px-6 py-3 bg-white shadow-md">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
-        <a href="/" className="text-2xl font-bold">
-          <img
+        <Link href="/" className="text-2xl font-bold">
+          <Image
+            priority
             className="w-32"
             src="https://mxgqqsaqzf.ufs.sh/f/OZf1u5pmfTq8sINh29L1pBe5vwbUrl6OsTy27tFmMYHXgSGR"
             alt="Logo"
           />
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <ul className="hidden md:flex space-x-8">
@@ -27,19 +30,39 @@ function Navigation() {
               className="hover:text-[#4464AD] focus:outline-none flex"
               onClick={() => setDropdownOpen(!dropdownOpen)}
             >
-              About Us {dropdownOpen ? <ChevronUp className="text-[10px] font-light" /> : <ChevronDown />}
+              About Us{" "}
+              {dropdownOpen ? (
+                <ChevronUp className="text-[10px] font-light" />
+              ) : (
+                <ChevronDown />
+              )}
             </button>
             {dropdownOpen && (
               <div className="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md flex flex-col z-50">
                 <ul className="py-2">
                   <li>
-                    <a href="/about-us/nsusn" className="block px-4 py-2 hover:bg-gray-100">NSUSN</a>
+                    <a
+                      href="/about-us/nsusn"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      NSUSN
+                    </a>
                   </li>
                   <li>
-                    <a href="/about-us/portfolio" className="block px-4 py-2 hover:bg-gray-100">Portfolio</a>
+                    <a
+                      href="/about-us/portfolio"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      Portfolio
+                    </a>
                   </li>
                   <li>
-                    <a href="/about-us/team" className="block px-4 py-2 hover:bg-gray-100">Team</a>
+                    <a
+                      href="/about-us/team"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      Team
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -47,13 +70,19 @@ function Navigation() {
           </li>
 
           <li>
-            <a href="/cofounder-matchmaking" className="hover:text-[#4464AD]">Find a Co-Founder</a>
+            <a href="/cofounder-matchmaking" className="hover:text-[#4464AD]">
+              Find a Co-Founder
+            </a>
           </li>
           <li>
-            <a href="#" className="hover:text-[#4464AD]">Share Your Story</a>
+            <a href="#" className="hover:text-[#4464AD]">
+              Share Your Story
+            </a>
           </li>
           <li>
-            <a href="#" className="hover:text-[#4464AD]">Contact Us</a>
+            <a href="#" className="hover:text-[#4464AD]">
+              Contact Us
+            </a>
           </li>
         </ul>
 
@@ -87,18 +116,38 @@ function Navigation() {
               className="flex items-center justify-between w-full text-left hover:text-[#4464AD]"
               onClick={() => setDropdownOpen(!dropdownOpen)}
             >
-              About Us {dropdownOpen ? <ChevronUp className="text-[10px] font-light" /> : <ChevronDown />}
+              About Us{" "}
+              {dropdownOpen ? (
+                <ChevronUp className="text-[10px] font-light" />
+              ) : (
+                <ChevronDown />
+              )}
             </button>
             {dropdownOpen && (
               <ul className="ml-4 mt-2 space-y-2">
                 <li>
-                  <a href="/about-us/nsusn" className="block hover:text-[#4464AD]">NSUSN</a>
+                  <a
+                    href="/about-us/nsusn"
+                    className="block hover:text-[#4464AD]"
+                  >
+                    NSUSN
+                  </a>
                 </li>
                 <li>
-                  <a href="/about-us/portfolio" className="block hover:text-[#4464AD]">Portfolio</a>
+                  <a
+                    href="/about-us/portfolio"
+                    className="block hover:text-[#4464AD]"
+                  >
+                    Portfolio
+                  </a>
                 </li>
                 <li>
-                  <a href="/about-us/team" className="block hover:text-[#4464AD]">Team</a>
+                  <a
+                    href="/about-us/team"
+                    className="block hover:text-[#4464AD]"
+                  >
+                    Team
+                  </a>
                 </li>
               </ul>
             )}
@@ -110,10 +159,14 @@ function Navigation() {
             </a>
           </li>
           <li>
-            <a href="#" className="hover:text-[#4464AD]">Share Your Story</a>
+            <a href="#" className="hover:text-[#4464AD]">
+              Share Your Story
+            </a>
           </li>
           <li>
-            <a href="#" className="hover:text-[#4464AD]">Contact Us</a>
+            <a href="#" className="hover:text-[#4464AD]">
+              Contact Us
+            </a>
           </li>
         </ul>
       </div>

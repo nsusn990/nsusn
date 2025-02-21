@@ -7,9 +7,13 @@ async function CoFounderMatchMaking() {
   const cookieStore = cookies();
   const supabase = createClient(cookieStore);
 
-  let { data: matchmaking, error } = await supabase
+  const { data: matchmaking, error } = await supabase
     .from("matchmaking")
     .select("*");
+
+  if (error) {
+    console.error(error);
+  }
 
   return (
     <div className="">
@@ -73,7 +77,7 @@ async function CoFounderMatchMaking() {
                 <p className="h-16">{match.description}</p>
                 <div className="flex items-center justify-between gap-4">
                   <div className="flex items-center gap-2">
-                    <img
+                    <Image
                       className="rounded-full object-cover w-12 h-12"
                       src={match.imagelink}
                       alt={match.name}
