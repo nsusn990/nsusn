@@ -18,17 +18,17 @@ async function CoFounderMatchMaking() {
   return (
     <div className="">
       <section className="py-9 flex flex-col items-center justify-center">
-        <div className="w-[60%] py-4 flex flex-col items-center">
-          <h1 className="font-bold text-7xl text-center">
-            NSUSN Co-Founder Matchmaking
+        <div className="w-[90%] lg:w-[60%] lg:py-4 flex flex-col items-center">
+          <h1 className="font-bold text-5xl lg:text-7xl text-center">
+            Co-Founder Matchmaking
           </h1>
-          <p className="pt-5">
+          <p className="pt-5 text-center">
             Where savvy founders go to meet potential co‑founders (Ycombinator)
           </p>
         </div>
-        <div className="py-10 px-6">
+        <div className="py-10 px-4 lg:px-6">
           <div>
-            <div className="grid grid-cols-3 py-4 w-full gap-3">
+            <div className="grid grid-cols-1 lg:grid-cols-3 py-4 w-full gap-3">
               {[
                 {
                   title: "Good for all stages",
@@ -61,20 +61,20 @@ async function CoFounderMatchMaking() {
       </section>
 
       {/* This is the section where the co-founder matching will be displayed */}
-      <section className="bg-gray-200 p-6 rounded-xl">
+      <section className="bg-gray-200 pb-6 p-1 lg:p-6 rounded-xl">
         <div>
-          <h1 className="text-4xl px-8 font-bold my-8">
+          <h1 className="text-2xl lg:text-4xl px-8 font-bold my-8">
             World-class founders are on co-founder matching
           </h1>
         </div>
-        <div className="w-full gap-4 px-8 grid grid-cols-3">
+        <div className="w-full gap-4 px-8 grid grid-cols-1 lg:grid-cols-3">
           {matchmaking &&
             matchmaking.map((match) => (
               <div
                 key={match.id}
                 className="w-full px-6 bg-white rounded-xl flex flex-col gap-5 py-6"
               >
-                <p className="h-16">{match.description}</p>
+                <p className="">{match.description}</p>
                 <div className="flex items-center justify-between gap-4">
                   <div className="flex items-center gap-2">
                     <Image
@@ -96,6 +96,9 @@ async function CoFounderMatchMaking() {
               </div>
             ))}
         </div>
+        {matchmaking && matchmaking.length > 6 && (
+          <h1>See More</h1>
+        )}
       </section>
     </div>
   );

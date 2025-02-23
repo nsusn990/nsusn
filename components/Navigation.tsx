@@ -16,8 +16,10 @@ function Navigation() {
         <Link href="/" className="text-2xl font-bold">
           <Image
             priority
-            className="w-32"
+            className=""
             src="https://mxgqqsaqzf.ufs.sh/f/OZf1u5pmfTq8sINh29L1pBe5vwbUrl6OsTy27tFmMYHXgSGR"
+            width={100}
+            height={100}
             alt="Logo"
           />
         </Link>
@@ -75,12 +77,12 @@ function Navigation() {
             </a>
           </li>
           <li>
-            <a href="#" className="hover:text-[#4464AD]">
+            <a href="/share-your-story" className="hover:text-[#4464AD]">
               Share Your Story
             </a>
           </li>
           <li>
-            <a href="#" className="hover:text-[#4464AD]">
+            <a href="/contact-us" className="hover:text-[#4464AD]">
               Contact Us
             </a>
           </li>
@@ -159,12 +161,12 @@ function Navigation() {
             </a>
           </li>
           <li>
-            <a href="#" className="hover:text-[#4464AD]">
+            <a href="/share-your-story" className="hover:text-[#4464AD]">
               Share Your Story
             </a>
           </li>
           <li>
-            <a href="#" className="hover:text-[#4464AD]">
+            <a href="/contact-us" className="hover:text-[#4464AD]">
               Contact Us
             </a>
           </li>
