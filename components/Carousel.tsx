@@ -56,11 +56,11 @@ const CarouselDemo: React.FC<AutoplayCarouselProps> = ({ items }) => {
                     priority
                     width={250} // 96px = w-24
                     height={250} // 96px = h-24
-                    className="rounded-xl object-cover"
+                    className="rounded-xl w-full object-cover"
                   />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mt-4">{member.name}</h3>
+                  <h3 className="text-3xl lg;text-xl font-semibold mt-4">{member.name}</h3>
                   <p className="text-gray-500">{member.role}</p>
                 </div>
               </div>

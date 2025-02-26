@@ -6,38 +6,44 @@ const events = [
   {
     name: "Skill Lab",
     role: "Skill Lab is a six-module training for aspiring entrepreneurs covering ideation, research, MVP, customers, pitch deck, and fundraising.",
-    image: "https://mxgqqsaqzf.ufs.sh/f/OZf1u5pmfTq8DZZeriOT5UXjJsWqzN0LB7EZOiGvHutk9Mmn",
+    image:
+      "https://mxgqqsaqzf.ufs.sh/f/OZf1u5pmfTq8DZZeriOT5UXjJsWqzN0LB7EZOiGvHutk9Mmn",
   },
   {
     name: "Ask Us Anything",
     role: "A series of webinars and seminars where the internal NSUSN team and startup experts answer questions from potential entrepreneurs.",
-    image: "https://mxgqqsaqzf.ufs.sh/f/OZf1u5pmfTq8R3JIJNepO9hbjdDIRwJnZHx2PGUu35BzYvNe",
+    image:
+      "https://mxgqqsaqzf.ufs.sh/f/OZf1u5pmfTq8R3JIJNepO9hbjdDIRwJnZHx2PGUu35BzYvNe",
   },
   {
     name: "Startups Clinic",
     role: "A daylong on-campus event where young entrepreneurs can get walk-in guidance from the internal NSUSN team and startup experts",
-    image: "https://mxgqqsaqzf.ufs.sh/f/OZf1u5pmfTq86VbfL708fbKE3gBI9wj1a4PpmnVCGhlNuFyd",
+    image:
+      "https://mxgqqsaqzf.ufs.sh/f/OZf1u5pmfTq86VbfL708fbKE3gBI9wj1a4PpmnVCGhlNuFyd",
   },
   {
     name: "Connecting Co-Founders",
     role: "Connecting Co-founders lets NSU students and alumni meet aspiring entrepreneurs to find their ideal co-founder.",
-    image: "https://mxgqqsaqzf.ufs.sh/f/OZf1u5pmfTq8wb4GCkUkY85ifSgDVR3BslZcWwp9NCdrM4TP",
+    image:
+      "https://mxgqqsaqzf.ufs.sh/f/OZf1u5pmfTq8wb4GCkUkY85ifSgDVR3BslZcWwp9NCdrM4TP",
   },
   {
     name: "Ask Us Anything",
     role: "A series of webinars and seminars where the internal NSUSN team and startup experts answer questions from potential entrepreneurs.",
-    image: "https://mxgqqsaqzf.ufs.sh/f/OZf1u5pmfTq8R3JIJNepO9hbjdDIRwJnZHx2PGUu35BzYvNe",
+    image:
+      "https://mxgqqsaqzf.ufs.sh/f/OZf1u5pmfTq8R3JIJNepO9hbjdDIRwJnZHx2PGUu35BzYvNe",
   },
 ];
 
 function NSUSN() {
   return (
-    <div>
+    <div  className="">
       <Image
         src={
           "https://mxgqqsaqzf.ufs.sh/f/OZf1u5pmfTq8tU8t9R1YilnzN0GIocAyPbKa2fgdHEJMp6Sj"
         }
         alt={""}
+        priority
         width={1920}
         height={1080}
       />
@@ -63,12 +69,26 @@ function NSUSN() {
           economies and societies. We aspire to partner with world-class
           entrepreneurship ecosystem contributors who can maximize the
           capacities of entrepreneurs who can contribute to regional
-          development. <br /> <br /> NSUSN&apos;s mission is to support entrepreneurs
-          by providing mentorship, networking, and investment opportunities so
-          that they can build sustainable and scalable businesses. We work
-          diligently to create a robust entrepreneurial ecosystem for technology
-          companies to flourish.
+          development. <br /> <br /> NSUSN&apos;s mission is to support
+          entrepreneurs by providing mentorship, networking, and investment
+          opportunities so that they can build sustainable and scalable
+          businesses. We work diligently to create a robust entrepreneurial
+          ecosystem for technology companies to flourish.
         </p>
+        <div className="w-full py-5 grid gap-2 lg:gap-4 grid-cols-3">
+          <div className="w-full border flex flex-col items-center justify-center px-3 py-3 rounded-xl border-black">
+            <h1 className="text-3xl lg:text-7xl font-bold">150</h1>
+            <h1>Entrepreneurs</h1>
+          </div>
+          <div className="w-full border px-3 flex flex-col items-center justify-center  py-3 rounded-xl border-black">
+            <h1 className="text-3xl lg:text-7xl font-bold">25+</h1>
+            <h1>Teams</h1>
+          </div>
+          <div className="w-full border px-3 flex flex-col items-center justify-center  py-3 rounded-xl border-black">
+            <h1 className="text-3xl lg:text-7xl font-bold">$1M</h1>
+            <h1>in funding</h1>
+          </div>
+        </div>
       </section>
       <section className="container mx-auto px-6 py-6">
         <h1 className="text-2xl lg:text-6xl pb-4 font-semibold text-[#4365AE]">

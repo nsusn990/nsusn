@@ -1,11 +1,19 @@
 import React from "react";
+import { cookies } from "next/headers";
+import { createClient } from "@/utils/supabase/server";
 import Image from "next/image";
-import { getData } from "../api/dataAritable";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 async function CoFounderMatchMaking() {
-  const matchmaking = await getData();
+  const cookieStore = cookies();
+  const supabase = createClient(cookieStore);
+
+  const { data: matchmaking, error } = await supabase
+    .from("matchmaking")
+    .select("*");
+
+  if (error) {
+    console.error(error);
+  }
 
   return (
     <div className="">
@@ -50,12 +58,6 @@ async function CoFounderMatchMaking() {
             </div>
           </div>
         </div>
-
-        <div>
-          <Button variant={"red"} className="text-white" asChild>
-            <Link href="/cofounder-matchmaking/register">Register and Find your Co-Founder</Link>
-          </Button>
-        </div>
       </section>
 
       {/* This is the section where the co-founder matching will be displayed */}
@@ -66,34 +68,33 @@ async function CoFounderMatchMaking() {
           </h1>
         </div>
         <div className="w-full gap-4 px-8 grid grid-cols-1 lg:grid-cols-3">
-          {matchmaking.map((match) => (
-            <div
-              key={match.id}
-              className="w-full px-6 justify-between bg-white rounded-xl flex flex-col gap-5 py-6"
-            >
-              <p className="">{match.fields.description}</p>
-              <div className="flex items-center justify-between gap-4">
-                <div className="flex items-center gap-2">
-                  <Image
-                    className="rounded-full object-cover auto"
-                    src={match.fields.imagelink}
-                    alt={match.fields.name}
-                    width={48}
-                    height={48}
-                  />
-                  <div className="flex flex-col">
-                    <h1 className="text-xl font-semibold">
-                      {match.fields.name}
-                    </h1>
-                    <p className="text-xs">{match.fields.companyName}</p>
+          {matchmaking &&
+            matchmaking.map((match) => (
+              <div
+                key={match.id}
+                className="w-full px-6 bg-white rounded-xl flex flex-col gap-5 py-6"
+              >
+                <p className="">{match.description}</p>
+                <div className="flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-2">
+                    <Image
+                      className="rounded-full object-cover w-12 h-12"
+                      src={match.imagelink}
+                      alt={match.name}
+                      width={48}
+                      height={48}
+                    />
+                    <div className="flex flex-col">
+                      <h1 className="text-xl font-semibold">{match.name}</h1>
+                      <p className="text-xs">{match.companyName}</p>
+                    </div>
                   </div>
+                  <h1 className="bg-[#4464AD] text-white px-3 rounded-xl py-2">
+                    {match.tag}
+                  </h1>
                 </div>
-                <Button asChild className="bg-[#4464AD] text-white px-3 rounded-xl py-2">
-                  <Link href={match.fields.linkedin}>LinkedIn</Link>
-                </Button>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
         {matchmaking && matchmaking.length > 6 && (
           <h1>See More</h1>
