@@ -96,7 +96,7 @@ function Navigation() {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-[75%] bg-white transform transition-transform ${
+        className={`fixed top-0 left-0 h-full z-10 w-[75%] bg-white transform transition-transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } md:hidden p-6`}
       >
