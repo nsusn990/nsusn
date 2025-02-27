@@ -2,6 +2,7 @@
 
 import { insertData } from "@/app/api/dataAritable";
 import { Button } from "@/components/ui/button";
+import { redirect } from "next/navigation";
 // Removed unused import
 import React, { useState } from "react";
 
@@ -54,6 +55,8 @@ function CofunderReg() {
       linkedin: formData.linkedin,
       description: formData.description,
     });
+
+    redirect("/cofounder-matchmaking");
   }
 
   return (

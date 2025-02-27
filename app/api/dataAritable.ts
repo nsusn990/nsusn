@@ -1,4 +1,3 @@
-import { AIRTABLE_API_KEY, AIRTABLE_APP_ID } from "@/config";
 import { Airtablerecord } from "@/types";
 
 export async function insertData({
@@ -41,12 +40,12 @@ export async function insertData({
 }
 
 export async function getData() {
-  const url = `https://api.airtable.com/v0/${AIRTABLE_APP_ID}/MatchMaking?maxRecords=3&view=Grid%20view`;
+  const url = `https://api.airtable.com/v0/apprimUI1qE3a87ae/MatchMaking?maxRecords=3&view=Grid%20view`;
 
   const response = await fetch(url, {
     method: "GET",
     headers: {
-      Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+      Authorization: `Bearer patEe8jxR2Y1Qm2F8.a9c41563f008e74377af47beed3262df812ef8f747cdb9eaade3a01170c1314d`,
     },
   });
 
