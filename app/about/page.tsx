@@ -96,9 +96,9 @@ function About() {
             {partners.map((partner, index) => (
               <Image
                 key={index}
-                width={150}
+                width={160}
                 height={50}
-                className="h-14 items-center flex"
+                className="h-14 object-cover items-center flex"
                 src={partner.logo}
                 alt={partner.name}
               />

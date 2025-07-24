@@ -57,12 +57,12 @@ export default function ReportsPage() {
       <div>
         <h1 className="text-2xl font-bold mb-4">Latest Reports</h1>
       </div>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {reports.map((report) => (
           <Link key={report.id} href={`/reports/${report.slug}`}>
             <Card className="hover:shadow-md transition-shadow cursor-pointer">
               <CardHeader>
-                <Image width={300} height={200} src={report.coverimg || ""} alt="" />
+                <Image width={400} height={200} src={report.coverimg || ""} className="rounded-md" alt="" />
               </CardHeader>
               <CardContent className="pt-2">
                 <CardTitle className="mb-2">{report.name}</CardTitle>
