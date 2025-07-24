@@ -1,14 +1,7 @@
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import NSUSNLogo from "./NSUSN Logo";
+import Link from "next/link";
 
 const navElem = [
   {
@@ -33,11 +26,27 @@ function NavBar() {
   return (
     <div className="px-7 py-5">
       <div className="flex justify-between items-center">
-        <div className="font-bold text-xl"><NSUSNLogo color="#2920D2" size={{
-                  width: 110.5,
-                  height: 33.7
-              }}/></div>
-        <div className="flex space-x-4 mt-2">
+        <Link href="/" className="font-bold text-xl">
+          <div className="hidden lg:flex">
+            <NSUSNLogo
+              color="#2920D2"
+              size={{
+                width: 110.5,
+                height: 33.7,
+              }}
+            />
+          </div>
+          <div className="flex lg:hidden">
+            <NSUSNLogo
+              color="#2920D2"
+              size={{
+                width: 90,
+                height: 25,
+              }}
+            />
+          </div>
+        </Link>
+        <div className="lg:flex hidden space-x-4 mt-2">
           {navElem.map((item) => (
             <div
               className="hover:font-bold transition-all ease-in hover:text-blue-700"
@@ -48,22 +57,10 @@ function NavBar() {
           ))}
         </div>
         <div>
-          <DropdownMenu>
-            <DropdownMenuTrigger>
-              <Avatar>
-                <AvatarImage src="https://github.com/shadcn.png" />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Profile</DropdownMenuItem>
-              <DropdownMenuItem>Billing</DropdownMenuItem>
-              <DropdownMenuItem>Team</DropdownMenuItem>
-              <DropdownMenuItem>Subscription</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <Avatar>
+            <AvatarImage src="https://github.com/shadcn.png" />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
         </div>
       </div>
     </div>

@@ -2,7 +2,6 @@ import {
   GraduationCap,
   Lightbulb,
   Network,
-  Fan,
   Codesandbox,
 } from "lucide-react";
 

@@ -4,5 +4,6 @@ export interface Report {
   slug: string;
   name: string;
   report: string;
+  coverimg: string;
   live: boolean;
 }
