@@ -32,7 +32,7 @@ function Contact() {
             <Separator className="mt-4 mb-7" />
 
             <form
-              action="https://formsubmit.co/nsu.sn+webcontact@northsouth.edu"
+              action="https://formsubmit.co/0851e30392ad8e607262664fdd0c3e8f"
               method="POST"
             >
               <div className="flex flex-col gap-5">
